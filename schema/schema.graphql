@@ -1,0 +1,26 @@
+type Query {
+    customers:[Customer],
+    login(loginInput:LoginInput!):Customer
+}
+
+type Customer {
+    firstname:String,
+    lastname:String,
+    email:String,
+    phone:String,
+    products:[Product]
+}
+
+type Product{
+    name:String,
+    description:String,
+    location:String,
+    isDelivable:Boolean,
+    avalablePieces:Int,
+    remainPieces:Int
+}
+
+input LoginInput{
+    email:String!,
+    password:String!
+}
