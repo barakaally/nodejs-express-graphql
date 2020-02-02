@@ -3,6 +3,10 @@ type Query {
     login(loginInput:LoginInput!):Customer
 }
 
+type Mutation {
+    registerCustomer(registerInput:RegisterInput!):Customer
+}
+
 type Customer {
     firstname:String,
     lastname:String,
@@ -22,5 +26,13 @@ type Product{
 
 input LoginInput{
     email:String!,
+    password:String!
+}
+
+input RegisterInput{
+    firstname:String!,
+    lastname:String!,
+    email:String!,
+    phone:String!,
     password:String!
 }
